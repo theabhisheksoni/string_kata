@@ -1,8 +1,9 @@
 class StringCalculator
   def self.add(input)
     return 0 if input.empty?
-    return input.to_i if input.match(/^\d+$/)
+    string = input.gsub(/\s+/, ",")
 
-    input.split(",").map(&:to_i).sum
+    numbers = string.split(",").map(&:to_i)
+    return numbers.sum
   end
 end
